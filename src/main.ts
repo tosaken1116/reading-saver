@@ -1,4 +1,7 @@
+import { linkIndicatorInit } from "./linkIndicator";
+
 const handleLoad = async () => {
+  await linkIndicatorInit();
   const pages = await chrome.storage.local.get([window.location.href]);
   let pageReadPercentage = pages[window.location.href];
   let setPage = false;
